@@ -171,7 +171,7 @@ payload: {}
 The tool supports the full Discord API, so you can reference the Discord API documentation for more endpoints and features. The responses include IDs and other metadata you can use for subsequent requests.
 Pro tips:
 - Save IDs returned from creation requests to use in follow-up requests
-- Unicode emojis can be included directly in message content
+- ~~Unicode emojis can be included directly in message content~~ ? Tell the model to use discord emoji like :champagne_glass: - Messages with unicode emoji hangs Claude Desktop?
 - Channel types: 0 = text, 2 = voice, 4 = category, 13 = stage
 - Role colors are in decimal format (not hex)
 - Most modification endpoints use PATCH method
