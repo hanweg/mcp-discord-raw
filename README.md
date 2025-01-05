@@ -102,6 +102,81 @@ Add this to your `claude_desktop_config.json`
 }
 ```
 
+# Reccomendations:
+Put server, channel and user IDs and some examples in project knowledge to avoid having to remind the model of those, along with something like this to get it started:
+
+"Here's how to effectively use the Discord raw API tool:
+The tool is called discord_api and takes three parameters:
+1. method: HTTP method ("GET", "POST", "PUT", "PATCH", "DELETE")
+2. endpoint: Discord API endpoint (e.g., "guilds/{guild.id}/roles")
+3. payload: Optional JSON object for the request body
+Key examples I've used:
+1. Creating roles:
+```
+discord_api
+method: POST
+endpoint: guilds/{server_id}/roles
+payload: {
+    "name": "Role Name",
+    "color": 3447003,  // Blue color in decimal
+    "mentionable": true
+}
+```
+2. Creating categories and channels:
+```
+// Category
+discord_api
+method: POST
+endpoint: guilds/{server_id}/channels
+payload: {
+    "name": "Category Name",
+    "type": 4  // 4 = category
+}
+// Text channel in category
+discord_api
+method: POST
+endpoint: guilds/{server_id}/channels
+payload: {
+    "name": "channel-name",
+    "type": 0,  // 0 = text channel
+    "parent_id": "category_id",
+    "topic": "Channel description"
+}
+```
+3. Moving channels to categories:
+```
+discord_api
+method: PATCH
+endpoint: channels/{channel_id}
+payload: {
+    "parent_id": "category_id"
+}
+```
+4. Sending messages:
+```
+discord_api
+method: POST
+endpoint: channels/{channel_id}/messages
+payload: {
+    "content": "Message text with emojis \ud83d\ude04"
+}
+```
+5. Assigning roles:
+```
+discord_api
+method: PUT
+endpoint: guilds/{server_id}/members/{user_id}/roles/{role_id}
+payload: {}
+```
+The tool supports the full Discord API, so you can reference the Discord API documentation for more endpoints and features. The responses include IDs and other metadata you can use for subsequent requests.
+Pro tips:
+- Save IDs returned from creation requests to use in follow-up requests
+- Unicode emojis can be included directly in message content
+- Channel types: 0 = text, 2 = voice, 4 = category, 13 = stage
+- Role colors are in decimal format (not hex)
+- Most modification endpoints use PATCH method
+- Empty payloads should be {} not null"
+
 ## License
 
 MIT License
