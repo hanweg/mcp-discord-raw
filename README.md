@@ -1,11 +1,21 @@
 # Discord Raw API MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@hanweg/mcp-discord-raw)](https://smithery.ai/server/@hanweg/mcp-discord-raw)
 This MCP server provides raw Discord API access through a single flexible tool. It supports both REST API calls and slash command syntax.
 
 <a href="https://glama.ai/mcp/servers/ct3fi5s557"><img width="380" height="200" src="https://glama.ai/mcp/servers/ct3fi5s557/badge" alt="Discord Raw API Server MCP server" /></a>
 
 ## Installation
 
+### Installing via Smithery
+
+To install Discord Raw API for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@hanweg/mcp-discord-raw):
+
+```bash
+npx -y @smithery/cli install @hanweg/mcp-discord-raw --client claude
+```
+
+### Manual Installation
 1. Set up your Discord bot:
    - Create a new application at [Discord Developer Portal](https://discord.com/developers/applications)
    - Create a bot and copy the token
