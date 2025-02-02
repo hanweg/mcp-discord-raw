@@ -114,7 +114,7 @@ Add this to your `claude_desktop_config.json`
 }
 ```
 
-# Reccomendations:
+# Recommendations:
 Put server, channel and user IDs and some examples in project knowledge to avoid having to remind the model of those, along with something like this to get it started:
 
 "Here's how to effectively use the Discord raw API tool:
